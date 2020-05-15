@@ -1,4 +1,4 @@
-package polymorphismTest;
+package polymorphism.OverloadingTest;
 
 
 import org.testng.annotations.Test;
