@@ -1,4 +1,4 @@
-package AbstractTest;
+package abstractConceptTest;
 
 
 import tutorial.fullCodes.abstractConcept.BarclaysBank;

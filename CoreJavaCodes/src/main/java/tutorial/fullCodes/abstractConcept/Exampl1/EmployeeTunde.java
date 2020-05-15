@@ -7,7 +7,7 @@ public class EmployeeTunde extends EmployeeBenefit {
     double totalIncrease;
 
 
-    protected EmployeeTunde(String firstName, String lastName, String emId, double initialSalary,double totalIncrease) {
+    public EmployeeTunde(String firstName, String lastName, String emId, double initialSalary, double totalIncrease) {
         super(firstName, lastName, emId, initialSalary,totalIncrease);
     }
 

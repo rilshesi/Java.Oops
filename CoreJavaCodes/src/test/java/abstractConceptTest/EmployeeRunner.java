@@ -1,4 +1,6 @@
-package tutorial.fullCodes.abstractConcept.Exampl1;
+package abstractConceptTest;
+
+import tutorial.fullCodes.abstractConcept.Exampl1.EmployeeTunde;
 
 public class EmployeeRunner {
 
