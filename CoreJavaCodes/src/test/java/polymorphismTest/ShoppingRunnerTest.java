@@ -11,7 +11,7 @@ public class ShoppingRunnerTest {
 
         Shopping shoes = new Shopping();
         shoes.buyShoe();
-        shoes.buyShoe(20," Reebok",10);  // if one method is called, it can serve the others
+        shoes.buyShoe(20," nike",10);  // if one method is called, it can serve the others
     }
 
 }
