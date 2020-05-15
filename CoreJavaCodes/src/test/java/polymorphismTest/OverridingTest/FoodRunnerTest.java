@@ -1,4 +1,4 @@
-package polymorphism.OverridingTest;
+package polymorphismTest.OverridingTest;
 
 
 import tutorial.fullCodes.polymorphism.overriding.ChildClass;
