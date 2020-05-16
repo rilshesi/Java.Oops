@@ -1,25 +1,32 @@
 package tutorial.fullCodes.interfaceConcept;
 
-public class Developer implements Animal, DomainClient {
-
+public class Goat implements Animal { // can implement more than one interface as well as extends other classes
+    @Override
+    public void walk() {
+        int legs = 4;
+        String message = "A goat can walk with "+legs+ " legs";
+        System.out.println(message);
+    }
 
     @Override
-    public void signIn() {
+    public void walk(String animalName) {
 
     }
 
     @Override
-    public void viewBalance() {
-
+    public String getAnimalName() {
+        return null;
     }
 
     @Override
-    public void signOut() {
-
+    public int getAnimalAge() {
+        return 0;
     }
 
     @Override
-    public void investment() {
-
+    public void setAnimalAge(int animalAge) {
     }
+    /*Goat is a type of animal and has to implement all methods in Animal. Goat can also extend other
+     normal class. Goat can also add it own normal methods
+     */
 }
