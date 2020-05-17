@@ -1,6 +1,13 @@
-package tutorial.fullCodes.oOpConcept.encapsulation.gettersSetters.example2;
+package tutorial.fullCodes.oOpConcept.encapsulation.example1;
 
 import java.util.Scanner;
+
+/*Encapsulation Golden Rule: states that because fields are now encapsulated and access is restricted, to access
+ the field, we need to use Getters and Setters methods.
+
+Note: Getters and setters can allow us to set a pin functions and other security for our instance
+variables in case we need to access it outside of its class.
+ */
 
 public class BankAccount {
 

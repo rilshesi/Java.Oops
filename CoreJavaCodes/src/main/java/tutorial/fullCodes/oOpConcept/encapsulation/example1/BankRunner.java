@@ -1,4 +1,4 @@
-package tutorial.fullCodes.oOpConcept.encapsulation.gettersSetters.example2;
+package tutorial.fullCodes.oOpConcept.encapsulation.example1;
 
 public class BankRunner {
 

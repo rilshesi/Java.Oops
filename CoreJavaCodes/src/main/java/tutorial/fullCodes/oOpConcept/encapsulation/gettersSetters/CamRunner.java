@@ -1,4 +1,4 @@
-package tutorial.fullCodes.oOpConcept.encapsulation.gettersSetters.example1;
+package tutorial.fullCodes.oOpConcept.encapsulation.gettersSetters;
 
 public class CamRunner {
 

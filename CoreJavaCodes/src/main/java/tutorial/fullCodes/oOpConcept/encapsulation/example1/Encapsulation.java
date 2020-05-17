@@ -1,4 +1,4 @@
-package tutorial.fullCodes.oOpConcept.encapsulation.gettersSetters;
+package tutorial.fullCodes.oOpConcept.encapsulation.example1;
 
 public class Encapsulation {
 
