@@ -10,6 +10,6 @@ public class Son extends Father {
         s.browser();
         s.loginDetails();
         s.fatherProperty();
-
     }
+
 }
