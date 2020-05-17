@@ -2,7 +2,7 @@ package polymorphismTest.OverloadingTest;
 
 
 import org.testng.annotations.Test;
-import tutorial.fullCodes.polymorphism.overloading.Shopping;
+import tutorial.fullCodes.oOpConcept.polymorphism.overloading.Shopping;
 
 public class ShoppingRunnerTest {
 

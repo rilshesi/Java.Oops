@@ -1,4 +1,4 @@
-package tutorial.fullCodes.encapsulation.gettersSetters.example2;
+package tutorial.fullCodes.oOpConcept.encapsulation.gettersSetters.example2;
 
 import java.util.Scanner;
 

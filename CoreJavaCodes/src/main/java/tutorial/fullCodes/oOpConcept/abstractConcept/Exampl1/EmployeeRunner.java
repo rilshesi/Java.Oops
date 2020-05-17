@@ -1,4 +1,4 @@
-package tutorial.fullCodes.abstractConcept.Exampl1;
+package tutorial.fullCodes.oOpConcept.abstractConcept.Exampl1;
 
 public class EmployeeRunner {
 

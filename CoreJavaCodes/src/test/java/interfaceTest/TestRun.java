@@ -1,7 +1,7 @@
 package interfaceTest;
 
-import tutorial.fullCodes.interfaceConcept.Animal;
-import tutorial.fullCodes.interfaceConcept.Goat;
+import tutorial.fullCodes.oOpConcept.interfaceConcept.Animal;
+import tutorial.fullCodes.oOpConcept.interfaceConcept.Goat;
 
 public class TestRun {
 

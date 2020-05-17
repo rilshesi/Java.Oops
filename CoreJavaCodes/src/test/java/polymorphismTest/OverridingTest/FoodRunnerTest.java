@@ -1,8 +1,8 @@
 package polymorphismTest.OverridingTest;
 
 
-import tutorial.fullCodes.polymorphism.overriding.ChildClass;
-import tutorial.fullCodes.polymorphism.overriding.ParentClass;
+import tutorial.fullCodes.oOpConcept.polymorphism.overriding.ChildClass;
+import tutorial.fullCodes.oOpConcept.polymorphism.overriding.ParentClass;
 
 public class FoodRunnerTest {
 

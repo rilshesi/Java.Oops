@@ -1,4 +1,4 @@
-package tutorial.fullCodes.abstractConcept;
+package tutorial.fullCodes.oOpConcept.abstractConcept;
 
 public class HalifaxBank extends BankOfEngland {/* wat if halifax also extends the BankOfEngland
 and its called in runner class. so both halifax and barclays will some common abstract

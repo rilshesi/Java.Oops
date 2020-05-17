@@ -1,4 +1,4 @@
-package tutorial.fullCodes.abstractConcept.Exampl1;
+package tutorial.fullCodes.oOpConcept.abstractConcept.Exampl1;
 
 /*this is an employee benefit, created by Employer, which will allow workers to take the normal
 benefit from the normal method and implement the abstract method to demand for an extra

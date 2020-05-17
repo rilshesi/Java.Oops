@@ -1,4 +1,4 @@
-package tutorial.fullCodes.interfaceConcept;
+package tutorial.fullCodes.oOpConcept.interfaceConcept;
 
 public interface Animal {
     /* interface Animal is like a client & will aways force all the implementors like Goat to write a

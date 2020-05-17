@@ -1,4 +1,4 @@
-package tutorial.fullCodes.interfaceConcept;
+package tutorial.fullCodes.oOpConcept.interfaceConcept;
 
 public class Goat implements Animal { // can implement more than one interface as well as extends other classes
     @Override

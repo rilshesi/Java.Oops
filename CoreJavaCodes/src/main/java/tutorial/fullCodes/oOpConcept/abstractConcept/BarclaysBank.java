@@ -1,4 +1,4 @@
-package tutorial.fullCodes.abstractConcept;
+package tutorial.fullCodes.oOpConcept.abstractConcept;
 
 public class BarclaysBank extends BankOfEngland {
     public double getAccountBalance() {

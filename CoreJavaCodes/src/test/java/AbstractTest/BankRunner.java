@@ -2,8 +2,8 @@ package AbstractTest;
 
 
 
-import tutorial.fullCodes.abstractConcept.HalifaxBank;
-import tutorial.fullCodes.abstractConcept.BarclaysBank;
+import tutorial.fullCodes.oOpConcept.abstractConcept.HalifaxBank;
+import tutorial.fullCodes.oOpConcept.abstractConcept.BarclaysBank;
 
 
 public class BankRunner {

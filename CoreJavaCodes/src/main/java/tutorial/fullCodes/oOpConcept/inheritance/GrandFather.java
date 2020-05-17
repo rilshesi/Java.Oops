@@ -1,4 +1,4 @@
-package tutorial.fullCodes.inheritance;
+package tutorial.fullCodes.oOpConcept.inheritance;
 
 public class GrandFather {
 
