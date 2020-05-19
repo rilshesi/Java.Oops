@@ -36,14 +36,14 @@ public class Data {
                 Row firstRow = rows.next();            //move to ist row
 
                 Iterator<Cell> cells = firstRow.cellIterator();   //has all cells is first row
-               // System.out.println(cells.next().getStringCellValue());    //has the fist cell value
+               //System.out.println(cells.next().getStringCellValue());    //has the fist cell value in ist row
 
 
                 int rowIndex = 0;
                 int columnIndex = 0;
-                while(cells.hasNext()) {
+                while(cells.hasNext()) { // to right of testData
                     Cell rowCells = cells.next();  //loop to get all cell in row 0
-                    System.out.println(rowCells.getStringCellValue());
+                    //System.out.println(rowCells.getStringCellValue());          // print all cell in row 0 ->
 
                     if(rowCells.getStringCellValue().equalsIgnoreCase("Testcases")){
                         columnIndex=rowIndex;
@@ -54,14 +54,14 @@ public class Data {
 
 
 
-                //scanning entire column cells in rowIndex
+                //scanning entire column cells in columnIndex
                 while(rows.hasNext()) {
                     Row row = rows.next();
                     if(row.getCell(columnIndex).getStringCellValue().equalsIgnoreCase(testCaseName)){
                         // After you grab Login row, pull the data of that row and feed into test case
                         Iterator<Cell> LoginCell = row.cellIterator(); //check all cells in Login row
+
                         while (LoginCell.hasNext()){
-                           // System.out.println(LoginCell.next().getStringCellValue());
                             //add cell to arraylist
                             a.add(LoginCell.next().getStringCellValue());
 
@@ -72,7 +72,7 @@ public class Data {
                             }
                             else
                             {
-
+                                // Here we need to convert the numeric to string as arrayList only accept string
                                 a.add(NumberToTextConverter.toText(c.getNumericCellValue()));
                             }
 
