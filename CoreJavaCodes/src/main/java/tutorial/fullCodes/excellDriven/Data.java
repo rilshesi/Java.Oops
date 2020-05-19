@@ -45,10 +45,12 @@ public class Data {
                     Cell rowCells = cells.next();  //loop to get all cell in row 0
                     //System.out.println(rowCells.getStringCellValue());          // print all cell in row 0 ->
 
+
                     if(rowCells.getStringCellValue().equalsIgnoreCase("Testcases")){
                         columnIndex=rowIndex;
                     }
                     rowIndex++;
+
                 }
                 System.out.println(columnIndex);
 
