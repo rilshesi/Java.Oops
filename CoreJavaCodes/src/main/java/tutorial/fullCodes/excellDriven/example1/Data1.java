@@ -1,4 +1,4 @@
-package tutorial.fullCodes.excellDriven.resourses;
+package tutorial.fullCodes.excellDriven.example1;
 
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class Data2 {
+public class Data1 {
 
 
     public static void main(String[] arg) throws IOException {

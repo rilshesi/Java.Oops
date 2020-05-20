@@ -1,9 +1,12 @@
-package tutorial.fullCodes.excellDriven;
+package tutorial.fullCodes.excellDriven.example1;
+
+import tutorial.fullCodes.excellDriven.example1.Data;
+import tutorial.fullCodes.excellDriven.example2.DataTwo;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TestSample {
+public class DataTest {
 
     public static void main(String[] args) throws IOException {
         // TODO Auto-generated method stub
