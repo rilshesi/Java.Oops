@@ -1,16 +1,20 @@
-package tutorial.fullCodes.excellDriven.example2;
+package tutorial.fullCodes.excellDriven.example1;
 
-import org.apache.poi.ss.usermodel.*;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class DataTwo {
-    Row row;
-    Cell cell;
-    public void getCellValue() throws IOException {
+public class DataToPrintAllValue {
+
+
+    public static void main(String[] arg) throws IOException {
 
         String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\dataDrivenExcel.xlsx";
         FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+path);
@@ -47,13 +51,13 @@ public class DataTwo {
                 Iterator<Row> rowIterator  = sheet.rowIterator();
 
                 while (rowIterator.hasNext()){
-                    row = rowIterator.next();
+                    Row row = rowIterator.next();
                     //System.out.println(row.getRowNum());
 
                     // Now let's iterate over the columns of the current row
                     Iterator<Cell> cellIterator = row.cellIterator();
                     while (cellIterator.hasNext()){
-                        cell = cellIterator.next();
+                        Cell cell = cellIterator.next();
                         String cellValue = dataFormatter.formatCellValue(cell);
                         System.out.print(cellValue + "\t");
                     }
@@ -64,6 +68,23 @@ public class DataTwo {
         }
 
 
-    }
 
+        // Closing the workbook
+        workbook.close();
+
+        /*
+           ==================================================================
+           Iterating over all the rows and columns in a Sheet (Multiple ways)
+           ==================================================================
+        */
+
+
+
+
+
+
+
+
+
+    }
 }

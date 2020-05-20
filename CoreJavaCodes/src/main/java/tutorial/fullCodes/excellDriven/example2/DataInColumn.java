@@ -1,20 +1,17 @@
-package tutorial.fullCodes.excellDriven.example1;
+package tutorial.fullCodes.excellDriven.example2;
 
-
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openxmlformats.schemas.drawingml.x2006.main.STStyleMatrixColumnIndex;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class Data1 {
-
-
-    public static void main(String[] arg) throws IOException {
+public class DataInColumn {
+    Row row;
+    Cell cell;
+    public void getCellValue() throws IOException {
 
         String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\dataDrivenExcel.xlsx";
         FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+path);
@@ -50,41 +47,35 @@ public class Data1 {
             if(sheet.getSheetName().equalsIgnoreCase("testdata")){
                 Iterator<Row> rowIterator  = sheet.rowIterator();
 
+
                 while (rowIterator.hasNext()){
-                    Row row = rowIterator.next();
+                    row = rowIterator.next();
                     //System.out.println(row.getRowNum());
+
 
                     // Now let's iterate over the columns of the current row
                     Iterator<Cell> cellIterator = row.cellIterator();
                     while (cellIterator.hasNext()){
-                        Cell cell = cellIterator.next();
-                        String cellValue = dataFormatter.formatCellValue(cell);
-                        System.out.print(cellValue + "\t");
+                        cell = cellIterator.next();
+                        int columnIndex = cell.getColumnIndex();
+                        //System.out.println("\t" + columnIndex );
+
+                        //print all cell in column 2
+                        if(columnIndex==3){
+                            String cellValue = dataFormatter.formatCellValue(cell);
+                            System.out.print(cellValue + "\t");
+                            System.out.println();
+                        }
+
                     }
-                    System.out.println();
+
+
                 }
 
             }
         }
 
 
-
-        // Closing the workbook
-        workbook.close();
-
-        /*
-           ==================================================================
-           Iterating over all the rows and columns in a Sheet (Multiple ways)
-           ==================================================================
-        */
-
-
-
-
-
-
-
-
-
     }
+
 }

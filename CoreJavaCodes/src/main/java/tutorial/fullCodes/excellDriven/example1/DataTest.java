@@ -1,7 +1,7 @@
 package tutorial.fullCodes.excellDriven.example1;
 
-import tutorial.fullCodes.excellDriven.example1.Data;
-import tutorial.fullCodes.excellDriven.example2.DataTwo;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +20,9 @@ public class DataTest {
         System.out.println(data.get(2));
         System.out.println(data.get(3));
 
+        WebDriver driver = new ChromeDriver();
 
+       // driver.findElement(By.xPath("kkkkk")).sendKeys(data.get(1));
 
     }
 }

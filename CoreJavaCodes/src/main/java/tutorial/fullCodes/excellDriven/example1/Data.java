@@ -42,10 +42,11 @@ public class Data {
                     Cell rowCells = cells.next();  //loop to get all cell in row 0
                     System.out.println(rowCells.getStringCellValue());          // print all cell in row 0 ->
 
-                    if(rowCells.getStringCellValue().equalsIgnoreCase("Testcases")){
-                        columnIndex=rowIndex;
+                    if(rowCells.getStringCellValue().equalsIgnoreCase("Data1")){
+                        columnIndex = rowIndex;
                     }
-                    rowIndex++;
+                    columnIndex++;
+
                 }
                 System.out.println(columnIndex);
 
