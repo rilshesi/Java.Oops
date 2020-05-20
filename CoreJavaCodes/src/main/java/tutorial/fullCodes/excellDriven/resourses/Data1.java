@@ -52,7 +52,7 @@ public class Data1 {
                     rowIndex++;
                     k++;
                 }
-                System.out.println(columnIndex);
+                //System.out.println(columnIndex);
 
 
 
