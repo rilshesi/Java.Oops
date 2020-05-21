@@ -1,17 +1,21 @@
-package tutorial.fullCodes.excellDriven.example2;
+package tutorial.fullCodes.excellDriven.example3;
 
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openxmlformats.schemas.drawingml.x2006.main.STStyleMatrixColumnIndex;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class DataInColumn {
+public class ExcelData {
+
+
     Row row;
     Cell cell;
-    public void getCellValue() throws IOException {
+    public void getData() throws IOException {
 
         String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\dataDrivenExcel.xlsx";
         FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+path);
@@ -41,6 +45,7 @@ public class DataInColumn {
         // Create a DataFormatter to format and get each cell's value as String
         DataFormatter dataFormatter = new DataFormatter();
 
+        int columnIndex=0;
         System.out.println("Retrieving Sheets using for-each loop");
         for(Sheet sheet: workbook) {
             //System.out.println("=> " + sheet.getSheetName());
@@ -52,21 +57,26 @@ public class DataInColumn {
                     row = rowIterator.next();
                     //System.out.println(row.getRowNum());
 
-
+                    String cellValue=null;
                     // Now let's iterate over the columns of the current row
                     Iterator<Cell> cellIterator = row.cellIterator();
                     while (cellIterator.hasNext()){
                         cell = cellIterator.next();
-                        int columnIndex = cell.getColumnIndex();
+                        columnIndex = cell.getColumnIndex();
                         //System.out.println("\t" + columnIndex );
 
-                        //print all cell in column 2
+
+                        //print all cell in column 0
                         if(columnIndex==0){
-                            String cellValue = dataFormatter.formatCellValue(cell);
+                            cellValue = dataFormatter.formatCellValue(cell);
+                            System.out.print(cellValue + "\t");
+                            System.out.println();
+
+                        }else if (columnIndex==1){
+                            cellValue = dataFormatter.formatCellValue(cell);
                             System.out.print(cellValue + "\t");
                             System.out.println();
                         }
-
                     }
 
 
@@ -77,5 +87,4 @@ public class DataInColumn {
 
 
     }
-
 }

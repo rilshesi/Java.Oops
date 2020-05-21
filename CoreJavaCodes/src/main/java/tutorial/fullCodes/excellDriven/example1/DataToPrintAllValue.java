@@ -59,7 +59,7 @@ public class DataToPrintAllValue {
                     while (cellIterator.hasNext()){
                         Cell cell = cellIterator.next();
                         String cellValue = dataFormatter.formatCellValue(cell);
-                        System.out.print(cellValue + "\t");
+                        System.out.print(cellValue + "\t"+ "\t");
                     }
                     System.out.println();
                 }
