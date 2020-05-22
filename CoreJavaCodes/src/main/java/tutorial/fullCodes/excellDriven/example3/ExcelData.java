@@ -1,90 +1,112 @@
 package tutorial.fullCodes.excellDriven.example3;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Iterator;
+import java.io.FileOutputStream;
+
+
+import static org.apache.poi.ss.usermodel.Row.MissingCellPolicy.RETURN_BLANK_AS_NULL;
+
 
 public class ExcelData {
 
 
-    Row row;
-    Cell cell;
-    public void getData() throws IOException {
 
-        String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\dataDrivenExcel.xlsx";
-        FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+path);
+    private static XSSFSheet ExcelWSheet;
 
-        // Creating a Workbook from an Excel file (.xls or .xlsx)
-        XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
+    private static XSSFWorkbook ExcelWBook;
 
-        // Retrieving the number of sheets in the Workbook
-        System.out.println("Workbook has " + workbook.getNumberOfSheets() + " Sheets : ");
+    private static XSSFCell Cell;
+
+    private static XSSFRow Row;
 
 
-         /*
-           =============================================================
-           Iterating over all the sheets in the workbook (Multiple ways)
-           =============================================================
-        */
+    //This method is to set the File path and to open the Excel file, Pass Excel Path and Sheetname as Arguments to this method
 
-        /*1. You can obtain a sheetIterator and iterate over it
-        Iterator<Sheet> sheetIterator = workbook.sheetIterator();
-        System.out.println("Retrieving Sheets using Iterator");
-        while (sheetIterator.hasNext()) {
-            Sheet sheet = sheetIterator.next();
-            System.out.println("=> " + sheet.getSheetName());
-        }*/
+    public static void setExcelFile(String Path, String SheetName) throws Exception {
 
-        // 2. Or you can use a for-each loop
-        // Create a DataFormatter to format and get each cell's value as String
-        DataFormatter dataFormatter = new DataFormatter();
+        try {
 
-        int columnIndex=0;
-        System.out.println("Retrieving Sheets using for-each loop");
-        for(Sheet sheet: workbook) {
-            //System.out.println("=> " + sheet.getSheetName());
-            if(sheet.getSheetName().equalsIgnoreCase("testdata")){
-                Iterator<Row> rowIterator  = sheet.rowIterator();
+            // Open the Excel file
 
+            FileInputStream ExcelFile = new FileInputStream(Path);
 
-                while (rowIterator.hasNext()){
-                    row = rowIterator.next();
-                    //System.out.println(row.getRowNum());
+            // Access the required test data sheet
 
-                    String cellValue=null;
-                    // Now let's iterate over the columns of the current row
-                    Iterator<Cell> cellIterator = row.cellIterator();
-                    while (cellIterator.hasNext()){
-                        cell = cellIterator.next();
-                        columnIndex = cell.getColumnIndex();
-                        //System.out.println("\t" + columnIndex );
+            ExcelWBook = new XSSFWorkbook(ExcelFile);
 
+            ExcelWSheet = ExcelWBook.getSheet(SheetName);
 
-                        //print all cell in column 0
-                        if(columnIndex==0){
-                            cellValue = dataFormatter.formatCellValue(cell);
-                            System.out.print(cellValue + "\t");
-                            System.out.println();
+        } catch (Exception e) {
 
-                        }else if (columnIndex==1){
-                            cellValue = dataFormatter.formatCellValue(cell);
-                            System.out.print(cellValue + "\t");
-                            System.out.println();
-                        }
-                    }
+            throw (e);
 
-
-                }
-
-            }
         }
 
+    }
+
+
+    //This method is to read the test data from the Excel cell, in this we are passing parameters as Row num and Col num
+
+    public static String getCellData(int RowNum, int ColNum) throws Exception {
+
+        try {
+
+            Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+
+            String CellData = Cell.getStringCellValue();
+
+            return CellData;
+
+        } catch (Exception e) {
+
+            return "";
+
+        }
 
     }
+
+
+    //This method is to write in the Excel cell, Row num and Col num are the parameters
+
+    public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
+
+        try {
+
+            Row = ExcelWSheet.getRow(RowNum);
+
+            Cell = Row.getCell(ColNum, RETURN_BLANK_AS_NULL);
+
+            if (Cell == null) {
+                Cell = Row.createCell(ColNum);
+
+                Cell.setCellValue(Result);
+            }else {
+                Cell.setCellValue(Result);
+            }
+            // Constant variables Test Data path and Test Data file name
+
+            FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData);
+            ExcelWBook.write(fileOut);
+
+            fileOut.flush();
+
+            fileOut.close();
+
+        } catch (Exception e) {
+
+            throw (e);
+
+        }
+    }
+
+
+
 }
+
+

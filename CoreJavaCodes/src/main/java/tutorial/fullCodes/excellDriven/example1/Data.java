@@ -20,7 +20,7 @@ public class Data {
    public ArrayList getData(String testCaseName) throws IOException {
        ArrayList<String> a = new ArrayList<String>();
 
-        String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\dataDrivenExcel.xlsx";
+        String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\TestData.xlsx";
         FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+path);
 
         XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);

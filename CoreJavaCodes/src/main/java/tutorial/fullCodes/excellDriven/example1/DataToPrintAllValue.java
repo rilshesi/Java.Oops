@@ -16,7 +16,7 @@ public class DataToPrintAllValue {
 
     public static void main(String[] arg) throws IOException {
 
-        String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\dataDrivenExcel.xlsx";
+        String path = "\\src\\main\\java\\tutorial\\fullCodes\\excellDriven\\resourses\\TestData.xlsx";
         FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+path);
 
         // Creating a Workbook from an Excel file (.xls or .xlsx)
